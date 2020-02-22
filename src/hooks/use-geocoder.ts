@@ -1,6 +1,6 @@
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import mapboxgl, { Map } from 'mapbox-gl';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
 type Inputs = {
@@ -13,6 +13,8 @@ type Inputs = {
 type Outputs = {
   /** The geocoder instance */
   geocoder?: any;
+  /** Set when the mapbox instance has loaded */
+  loaded: boolean;
 };
 
 /** Adds a MapBox geocoder to a given map instance */
@@ -23,6 +25,7 @@ export function useGeocoder({
   position = 'top-right',
 }: Inputs): Outputs {
   const geocoderRef = useRef<any>();
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     if (map && !geocoderRef.current) {
@@ -32,8 +35,9 @@ export function useGeocoder({
         ...options,
       });
       map.addControl(geocoderRef.current, position);
+      setLoaded(true);
     }
   }, [accessToken, map, options, position]);
 
-  return { geocoder: geocoderRef.current };
+  return { geocoder: geocoderRef.current, loaded };
 }
