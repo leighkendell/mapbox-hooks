@@ -9,7 +9,7 @@ type Inputs = {
   options?: any;
 };
 
-/** A simple hook that adds a MapBox geocoder to a given map instance */
+/** Adds a MapBox geocoder to a given map instance */
 export function useGeocoder({ accessToken, map, options = {} }: Inputs) {
   const geocoderRef = useRef<any | null>(null);
 

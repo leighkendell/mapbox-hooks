@@ -23,7 +23,7 @@ const defaultOptions: Inputs['options'] = {
   style: 'mapbox://styles/mapbox/streets-v11',
 };
 
-/** A simple hook that binds mapbox to the given container ref and returns the mapbox instance */
+/** Binds mapbox to the given container ref and returns the mapbox instance */
 export function useMapbox({ accessToken, options }: Inputs): Outputs {
   const mapRef = useRef<Map>();
   const [loaded, setLoaded] = useState(false);
