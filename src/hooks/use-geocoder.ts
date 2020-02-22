@@ -7,19 +7,26 @@ type Inputs = {
   accessToken: string;
   map?: Map;
   options?: any;
+  position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
 };
 
 /** Adds a MapBox geocoder to a given map instance */
-export function useGeocoder({ accessToken, map, options = {} }: Inputs) {
+export function useGeocoder({
+  accessToken,
+  map,
+  options = {},
+  position = 'top-right',
+}: Inputs) {
   const geocoderRef = useRef<any | null>(null);
 
   useEffect(() => {
     if (map && !geocoderRef.current) {
       geocoderRef.current = map.addControl(
-        new MapboxGeocoder({ accessToken, mapboxgl, ...options })
+        new MapboxGeocoder({ accessToken, mapboxgl, ...options }),
+        position
       );
     }
-  }, [accessToken, map, options]);
+  }, [accessToken, map, options, position]);
 
   return { geocoder: geocoderRef.current };
 }
