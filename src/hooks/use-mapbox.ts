@@ -30,7 +30,7 @@ export function useMapbox({ accessToken, options }: Inputs): Outputs {
 
   const setContainer = useCallback(
     node => {
-      if (node !== null) {
+      if (node !== null && !mapRef.current) {
         mapboxgl.accessToken = accessToken;
 
         mapRef.current = new mapboxgl.Map({
