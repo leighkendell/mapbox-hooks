@@ -1,0 +1,63 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "peerDependencies": {
+    "@mapbox/mapbox-gl-geocoder": ">=4.5.1",
+    "mapbox-gl": ">=1.8.0",
+    "react": ">=16.12.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "use-mapbox",
+  "author": "Leigh Kendell",
+  "module": "dist/use-mapbox.esm.js",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@mapbox/mapbox-gl-geocoder": "^4.5.1",
+    "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-docs": "^5.3.13",
+    "@storybook/addon-links": "^5.3.13",
+    "@storybook/addons": "^5.3.13",
+    "@storybook/react": "^5.3.13",
+    "@types/jest": "^25.1.3",
+    "@types/mapbox-gl": "^1.7.0",
+    "@types/react": "^16.9.22",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "^8.0.6",
+    "husky": "^4.2.3",
+    "mapbox-gl": "^1.8.0",
+    "react": "^16.12.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-dom": "^16.12.0",
+    "ts-loader": "^6.2.1",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.11.0",
+    "typescript": "^3.8.2"
+  }
+}
