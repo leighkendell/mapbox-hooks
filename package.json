@@ -34,9 +34,9 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "use-mapbox",
+  "name": "mapbox-hooks",
   "author": "Leigh Kendell",
-  "module": "dist/use-mapbox.esm.js",
+  "module": "dist/mapbox-hooks.esm.js",
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@mapbox/mapbox-gl-geocoder": "^4.5.1",

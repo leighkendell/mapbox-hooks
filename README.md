@@ -5,13 +5,13 @@ A simple hook that provides an easy way to get up and running with [mapbox-gl-js
 ## Install
 
 ```
-$ npm install use-mapbox mapbox-gl-js @mapbox/mapbox-gl-geocoder
+$ npm install mapbox-hooks mapbox-gl-js @mapbox/mapbox-gl-geocoder
 ```
 
 ## Usage
 
 ```
-import { useMapbox } from 'use-mapbox';
+import { useMapbox } from 'mapbox-hooks';
 
 const accessToken = 'YOUR_ACCESS_TOKEN';
 const options = {};
