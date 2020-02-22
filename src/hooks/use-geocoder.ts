@@ -14,7 +14,7 @@ export function useGeocoder({ accessToken, map, options = {} }: Inputs) {
   const geocoderRef = useRef<any | null>(null);
 
   useEffect(() => {
-    if (map) {
+    if (map && !geocoderRef.current) {
       geocoderRef.current = map.addControl(
         new MapboxGeocoder({ accessToken, mapboxgl, ...options })
       );
